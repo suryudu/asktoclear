@@ -1,0 +1,41 @@
+.profile-menu {
+   border-top: 1px red solid;
+   border-bottom: 1px red solid;
+}
+
+.profile-menu ul {
+    display:flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+}
+
+.profile-menu .menu-items{
+    background-color: blue;
+    
+}
+
+
+.profile-menu ul li{
+    width:30%;
+    font-size: 25px;
+    list-style: none;
+    cursor: pointer;
+}
+
+@media screen and (min-width:900px) and (max-width:1100px){
+   
+   
+}
+
+@media screen and (min-width:701px) and (max-width:899px){
+   
+}
+@media screen and (max-width:700px){
+    .profile-menu ul {
+        margin-left: 10px;
+        margin-right: 10px;
+        
+    }
+   
+}

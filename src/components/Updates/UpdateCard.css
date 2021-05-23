@@ -1,0 +1,120 @@
+
+.update:hover{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.update .uploader {
+    display: flex;
+    margin-left: 20px;
+}
+.update .uploader p{
+    padding: 10px;
+    font-size:18px;
+    font-weight: 100;
+    color: #1565c0;
+    margin-left: 30px;
+    
+}
+.update .uploader .update-time {
+   margin-left: 30%;
+}
+
+.update .poster img{
+    height: 250px;
+    width: 400px;
+    border-radius: 30px;
+   
+}
+.update .poster img:hover{
+    border:5px solid red
+}
+
+
+.update .description {
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 400px;
+    font-size: 18px;
+}
+.update .description .update-typo{
+    display: flex;
+    margin-left: 20px;
+    padding: 5px 0px;
+}
+.update .description .update-typo .team {
+    margin-left: 50%;
+}
+.update .description .update-description {
+    margin-left: 20px;
+    padding: 5px 20px 2px 0px;
+   text-align: justify;
+}
+
+.update .contacts{
+    border: 1px solid black;
+    width: 400px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.update .contacts p{
+    padding: 6px;
+}
+@media screen and (min-width:900px) and (max-width:1100px){
+    .update .poster img{
+        height: 250px;
+        width: 350px;
+       
+       
+    }
+
+.update .description {
+    margin-top: 5px;
+    width: 350px;
+    font-size: 18px;
+}
+.update .contacts{
+    
+    width: 350px;
+    margin-top: 9px;
+    
+}
+ 
+
+@media screen and (min-width:701px) and (max-width:899px){
+    .update .poster img{
+        height: 200px;
+        width: 300px;
+        border-radius: 30px;
+    }
+    .update .description {
+        margin-top: 4px;
+        width: 300px;
+        font-size: 17px;
+    }
+    .update .contacts{
+        width: 300px;
+        margin-top: 7px;
+    }
+}
+@media screen and (max-width:700px){
+    .update .poster img{
+        height: 200px;
+        width: 250px;
+        border-radius: 30px;
+    }
+    .update .description {
+        margin-top: 3px;
+        width: 250px;
+        font-size: 15px;
+    }
+    .update .contacts{
+        width: 250px;
+        margin-top: 5px;
+        
+    }
+}
+}

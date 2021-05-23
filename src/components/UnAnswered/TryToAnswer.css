@@ -1,0 +1,39 @@
+.question-search input{
+    width: 85%;
+    font-size: 20px;
+    margin-left: 75px;
+    border-radius: 15px;
+    border: 2px solid red;
+    outline: none;
+    padding: 3px;
+}
+.question-search {
+    /* margin-left: 15%;
+    margin-right: 15%; */
+}
+.trytoanswer{
+    margin-top: 100px;
+ 
+}
+
+
+
+@media screen and (min-width:900px) and (max-width:1100px){
+    
+   
+}
+
+@media screen and (min-width:701px) and (max-width:899px){
+    
+    
+}
+@media screen and (max-width:700px){
+    
+   .trytoanswer {
+       margin-top: 150px;
+   }
+   .question-search input{
+       width: 100%;
+       margin-left: 40px;
+   }
+}

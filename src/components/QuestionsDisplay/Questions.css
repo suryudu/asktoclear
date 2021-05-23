@@ -1,0 +1,136 @@
+.qanda {
+    display: flex;
+}
+.search-bar{
+    margin-top: 100px;
+    margin-left: 7%;
+    margin-right: 10%;
+}
+.questions{
+    background-color:#e8eaf6;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 6%;
+    margin-right: 5%;
+}
+
+
+
+.questions .question {
+    padding: 10px 0px 10px 30px;
+}
+.questions .question .question-details {
+    width: 100%;
+}
+.questions .question h4 {
+    font-size: 25px;
+    color: #757575;
+    
+}
+
+.questions .question h4:hover{
+    color:black;
+}
+
+.questions .question table{
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.questions .question table td {
+    font-size: 18px;
+    padding-left: 150px;
+    padding-right:30px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+.questions .question .questionedby {
+   margin-left:30px;
+    font-size: 20px;
+    color:#1565c0;
+    right: 0px;
+}
+
+
+.questions .comments{
+    width: 80%;
+    padding: 10px 0px 10px 30px;
+    margin-left: 6%;
+}
+
+.questions .comments .comment{
+    margin-left: 6%;
+    padding:5px 0px;
+}
+
+.questions .comments .comment-reply{
+    margin-left: 8%;
+}
+.questions .comments .comment-reply .reply {
+    margin-left: 2%;
+
+}
+.questions .comments .comment-reply .reply .reply-message {
+    margin-left: 3%;
+    padding: 5px 0px;
+}
+
+
+
+
+
+
+@media screen and (min-width:900px) and (max-width:1100px){
+    .questions{
+       margin-left: 10%;
+       margin-right: 10%;
+    }
+    .search-bar{
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+   
+}
+
+@media screen and (min-width:701px) and (max-width:899px){
+    .questions{
+       margin-left: 5%;
+       margin-right: 5%;
+    
+    }
+    .questions .question table {
+        margin-left: 20px;
+    }
+    .search-bar{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+}
+@media screen and (max-width:700px){
+    .search-bar{
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .questions{
+       margin-left: 0%;
+       margin-right: 0%;
+      
+    }
+    .questions .question table {
+        margin-left: 10px;
+    }
+    .questions .question table td {
+        font-size: 18px;
+        padding-left: 50px;
+    }
+    .search-bar {
+        margin-top: 150px;
+    }
+   
+}
+
+
+

@@ -1,0 +1,71 @@
+.updateinfo {
+    margin: 5% 10% 10% 10%;
+    
+
+}
+.updateinfo h1{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.updateinfo .image{
+    text-align: center;
+}
+.updateinfo img{
+    height: 250px;
+    width: 250px;
+    border-radius: 150px;
+}
+
+.updateinfo .userinfo {
+    padding: 10px;
+    margin-left: 200px;
+}
+
+.updateinfo .userinfo label{
+    font-size: 20px;
+
+}
+
+.updateinfo .userinfo input{
+    width: 80%;
+    height: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid red;
+    margin-top: 10px;
+}
+
+.updateinfo button {
+    font-size: 18px;
+    
+    margin-left: 30px;
+    margin-top: 10px; 
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid blue;
+    color: blue;
+    text-align: center;
+}
+.updateinfo button:hover{
+    background-color: blue;
+    color: white;
+}
+
+@media screen and (min-width:701px) and (max-width:850px){
+    .updateinfo .userinfo {
+        margin-left: 50px;
+       
+    }
+}
+
+@media screen and (max-width:700px){
+    .updateinfo{
+        margin: 5% 0% 0% 0%;
+    }
+    .updateinfo .userinfo {
+        margin-left: 100px;
+    }
+}

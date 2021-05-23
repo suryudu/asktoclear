@@ -1,0 +1,38 @@
+.question{
+    padding:10px 0px 5px 30px;
+    font-size: 25px;
+    width:85%;
+}
+.question .posted-time {
+    color:#1565c0;
+    margin-left: 30px;
+}
+
+
+
+.buttons button {
+    padding: 3px;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+    color: red;
+}
+.buttons button:hover {
+    font-size: 20px;
+   
+}
+
+
+
+@media screen and (max-width:600px) {
+    .question{
+        font-size: 20px;
+    }
+    
+}

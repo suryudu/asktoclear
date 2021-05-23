@@ -1,0 +1,77 @@
+.files{
+    /* margin-left: 30%;
+    margin-right: 30%;
+    */
+    margin-top: 100px;
+    margin-left: 8%;
+    margin-bottom: 250px;
+   
+}
+.pdf-table{
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    
+}
+
+.view-buttons button{
+    height: 30px;
+    width: 100px;
+   
+    border-radius: 5px;
+    font-size: 20px;
+    /* background-color: #039be5; */
+    background: none repeat scroll 0 0 #039be5;
+    
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+.imageviewer {
+    text-align: center;
+}
+.imageviewer img{
+    margin-top: 50px;
+    height: 500px;
+    width: 70%;
+}
+
+.pdf-buttons button{
+    
+    height: 30px;
+    width: 100px;
+    
+    border-radius: 5px;
+   
+    font-size: 20px;
+    /* background-color: #039be5; */
+    background: none repeat scroll 0 0 #039be5;
+    
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.pdfviewer{
+   position: relative;
+   margin-top: 100px;
+}
+.react-pdf__Page__canvas {
+ 
+    width: 110% !important;
+    height: 100% !important;
+}
+.pagenumber{
+    margin-top: 20px;
+    font-size: 20px;
+}
+@media screen and (max-width:1200px){
+    .files{
+       margin-left: 0%;
+    }
+    .pdf-table{
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}

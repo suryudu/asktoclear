@@ -1,0 +1,47 @@
+.viewupdate {
+   
+    
+    padding: 10px;
+}
+
+.viewupdate .updateposter img{
+    width: 100%;
+    height: 370px;
+}
+.viewupdate .updatedby{
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+.close{
+    float: right;
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.viewupdate .updatedby .update-time{
+    margin-left: 60%;
+}
+.viewupdate .postercontent .poster-info{
+    display: flex;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+.viewupdate .postercontent .poster-info .poster-team{
+    margin-left: 60%;
+}
+.viewupdate .postercontent .poster-description{
+    font-size: 18px;
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.viewupdate .poster-contacts{
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 10px;
+}

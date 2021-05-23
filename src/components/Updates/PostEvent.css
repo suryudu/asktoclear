@@ -1,0 +1,57 @@
+.postevent {
+    text-align: center;
+    padding: 10px;
+    margin-top: 100px;
+
+}
+
+.postevent h1{
+    padding: 5px;
+}
+.postevent .input {
+    font-size: 20px;
+    font-weight: 50px;
+}
+.postevent .input select {
+    width: 20%;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.postevent .input option{
+    cursor: pointer;
+}
+.postevent .input{
+    margin-top: 10px;
+}
+.postevent .input input {
+    width:50%;
+    font-size: 20px;
+    margin-top: 5px;
+    
+}
+.postevent .input .input-style{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid blue;
+}
+.postevent .input .input-file{
+    margin-left: 30%;
+    outline: none;
+}
+
+.postevent button{
+    padding: 5px;
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: skyblue;
+    cursor: pointer;
+}
+
+@media screen and (max-width:700px){
+    .postevent .input input{
+        width:80%;
+    }
+}

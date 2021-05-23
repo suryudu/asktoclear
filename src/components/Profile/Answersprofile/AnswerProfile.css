@@ -1,0 +1,33 @@
+.answer{
+    padding:15px 0px 10px 30px;
+    font-size: 25px;
+    
+}
+
+.answer .buttons {
+    text-align: center;
+}
+
+.buttons button {
+    padding: 3px;
+    font-size: 18px;
+    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+    color: red;
+}
+.buttons button:hover {
+    font-size: 20px;
+   
+}
+
+@media screen and (max-width:600px) {
+    .answer{
+        font-size: 20px;
+    }
+}

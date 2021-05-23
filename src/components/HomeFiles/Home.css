@@ -1,0 +1,80 @@
+.home {
+    font-family: 'Ubuntu', sans-serif;  
+    height:100vh;
+    width:100vw;
+    max-height:100%;
+    max-width:100%;
+    overflow: hidden;
+}
+.hero-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width:100%;
+    padding:0 70px;
+}
+.content {
+    /* position:relative;
+    margin-top: 270px;
+    padding: 0px 70px; */
+    color:white;
+}
+
+.content h1 {
+    font-size: 50px;
+    /* font-weight: 700; */
+    margin-bottom: 15px;
+    line-height: 50px;
+    color:rgba(0,0,0,1);
+
+}
+.content p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    line-height: 25px;
+    padding: 10px;
+    
+}
+
+.home-buttons {
+    margin-top: 10px;
+    padding: 10px;
+    left: 0px;
+}
+
+.home-buttons .button-style {
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    padding:7px 20px;
+    border-radius: 24px;
+    color:#2699fb;
+    font-size:1.4rem;
+    border:1px solid transparent;
+    transition: all .5s ease;
+}
+.home-buttons .button-style:hover{
+    background-color: #2699fb;
+    border: 1px solid #ffff;
+    color:#fff;
+}
+.home .navbar-logo .logo {
+    color: #fff;
+}
+.home .navbar .menu td a {
+    color: #fff;
+}
+.home .sticky .menu td a{
+    color: #212121;
+}
+.home .sticky .navbar-logo .logo{
+    color: #212121;
+}
+
+

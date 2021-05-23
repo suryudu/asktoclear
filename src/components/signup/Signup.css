@@ -1,0 +1,165 @@
+.signup-form {
+  
+    width:400px;
+    background-color:white;
+    margin-top: 100px;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 10%;
+    padding: 30px 30px;
+    box-shadow:0px 5px 20px 5px rgba(255, 0, 0, 0.2);
+}
+.signup-form h2 {
+    font-size: 30px;
+    margin: 0px 100px;
+}
+.signup_field p{
+    color: red;
+    font-size: 20px;
+}
+.signup-form .signup_field {
+    margin-top: 15px;
+}
+.signup-form .signup_field input{
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    border-style: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+.signup-form .signup_field label{
+    color: blue;
+}
+.signup-form .signup_field input:focus, .signup-form .input input:valid
+{
+   border-bottom: 2px solid blue;
+}
+.signup-form .input p{
+    color: blue;
+}
+.signup-form .input select {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.signup-form .input-file {
+    position: relative;
+    margin: 20px 0px;
+}
+.signup-form .input-file label{
+    color: blue;
+}
+
+
+.signup-form .input-file input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+
+}
+.signup-form .input button {
+    width:30%;
+    border: 1px solid black;
+    border-radius: 3rem;
+    color :black;
+    font-family :roboto;
+    font-size :18px;
+    font-weight :100;
+    overflow :hidden;
+    padding :7px;
+    position: relative;
+    text-decoration: none;
+    transition: .2s transform ease-in-out;
+    will-change :transform;
+    z-index: 0;
+    margin-left: 110px;
+    cursor: pointer;
+    background-color: white;
+    color: crimson;
+    outline: none;
+    margin-top: 20px;
+}
+
+
+
+   .signup-form .input button::after{
+      background-color: yellow;
+      border-radius: 3rem;
+      content: '';
+      display: block;
+      height :100%;
+      width :100%;
+      position :absolute;
+      left: 0;
+      top :0;
+      transform :translate(-100%, 0) rotate(10deg);
+      transform-origin: top left;
+      transition :.2s transform ease-out;
+      will-change: transform;
+      z-index: -1;
+    }
+
+   .signup-form .input button:hover::after{
+        transform: translate(0, 0);
+    }
+
+
+   .signup-form .input button:hover{
+        border: 2px solid transparent;
+        color: indigo;
+        transform: scale(1.05);
+        will-change: transform;
+
+    }
+
+
+
+.signup-form .input select {
+   height: 2em;
+   width: 100px;
+   margin-left: 10px;
+}
+
+.signup-form .radio_buttons {
+    position: relative;
+    margin: 20px 0px;
+}
+
+.signup-form .radio_buttons input[type=radio] {
+    border: 0px;
+    width: 10%;
+    height: 1em;
+
+}
+.signup-form .radio_buttons label {
+    font-size: 20px;
+}
+
+.signup-form .login {
+    margin-left: 20px;
+    padding:5px;
+}
+.signup-form .login p{
+    font-size: 20px;
+}
+
+
+.login-form .input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid red;
+    outline: none;
+    font-size: 15px;
+}
+
+/* #toast-container {
+    top: 50px !important;
+    right: 30px !important;
+    left:auto !important;
+    font-size: 50px !important;
+  } */

@@ -1,0 +1,42 @@
+.sharefile{
+    margin-top: 100px;
+    text-align: center;
+}
+.sharefile .input {
+    font-size: 20px;
+    font-weight: 50px;
+    margin-top: 10px;
+}
+.sharefile .input select {
+    width: 20%;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.sharefile .input option{
+    cursor: pointer;
+}
+.sharefile .input input {
+    width:50%;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.sharefile .input .input-style{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid blue;
+}
+.sharefile .input .input-file{
+    margin-left: 30%;
+    outline: none;
+}
+.sharefile button{
+    padding: 5px;
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: skyblue;
+    cursor: pointer;
+    outline: none;
+}
