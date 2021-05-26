@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import "./AskQuestion.css";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
@@ -24,7 +23,7 @@ export default function AskQuestion(props) {
       }
      
       axios
-      .post('http://localhost:3003/askyourquestion',data,{headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('jwt')}})
+      .post('https://asktoclearbackend.herokuapp.com/askyourquestion',data,{headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('jwt')}})
       .then(res=>{
         if(res.data.error){
           toast.error(res.data.error);

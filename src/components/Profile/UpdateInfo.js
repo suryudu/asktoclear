@@ -19,7 +19,7 @@ export default function UpdateInfo(props) {
     const [workPlace,setWorkPlace]=useState('');
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/myprofile',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/myprofile',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
            
             setName(res.data.name);
@@ -58,7 +58,7 @@ export default function UpdateInfo(props) {
             oldstudent_workplace:workPlace
         }
         axios
-        .patch('http://localhost:3003/updateprofileinfo',data,{headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .patch('https://asktoclearbackend.herokuapp.com/updateprofileinfo',data,{headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
                 if(res.data.error){
                     toast.error(res.data.error);

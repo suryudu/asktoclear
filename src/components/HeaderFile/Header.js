@@ -93,7 +93,7 @@ export default function Header(props) {
                 {signed ? <td><Link className="menu-item" to="/trytoanswer">Try to Answer</Link></td> : ''}
                 
                 <td>
-                    {signed ? <div className="popup"><img src={`http://localhost:3003/${state.file_path}`} alt="imoji" className="avatar" ref={ref} onClick={clickProfile} />
+                    {signed ? <div className="popup"><img src={`https://asktoclearbackend.herokuapp.com/${state.file_path}`} alt="imoji" className="avatar" ref={ref} onClick={clickProfile} />
                         <div className="popuptext" id="mypopup">
                             <p><Link to="/profile">view profile</Link></p>
                             <div className='divider'></div>

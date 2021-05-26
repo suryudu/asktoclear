@@ -32,7 +32,7 @@ export default function QuestionProfile(props) {
 
     const deleteQuestion=()=>{
             axios
-            .delete(`http://localhost:3003/deletequestion/${question._id}`,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+            .delete(`https://asktoclearbackend.herokuapp.com/deletequestion/${question._id}`,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
             .then(res=>{
                 if(res.data.error){
                     toast.error(res.data.error)

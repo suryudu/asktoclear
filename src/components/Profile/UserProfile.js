@@ -14,7 +14,7 @@ export default function UserProfile(props) {
    
     useEffect(()=>{       
             axios
-            .get('http://localhost:3003/myprofile',{headers:{'Authorization':'Bearer '+localStorage.getItem("jwt")}})
+            .get('https://asktoclearbackend.herokuapp.com/myprofile',{headers:{'Authorization':'Bearer '+localStorage.getItem("jwt")}})
             .then(res=>{
                 if(res.data.error){
                     console.log(res.data.error);

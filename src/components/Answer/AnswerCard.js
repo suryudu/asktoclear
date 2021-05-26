@@ -10,7 +10,7 @@ export default function AnswerCard(props) {
             <tr>
             <td style={{width:'30px'}}></td>
             <td>
-               <img src={`http://localhost:3003/${answer.answerBy.file_path}`} height='40px' width='40px' />
+               <img src={`https://asktoclearbackend.herokuapp.com/${answer.answerBy.file_path}`} height='40px' width='40px' />
             </td>
             <td>
                 {answer.answerBy.name} {answer.date}

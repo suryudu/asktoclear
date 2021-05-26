@@ -14,7 +14,7 @@ export default function PdfViewer(props) {
     const [message,setMessage]=useState()
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/file/'+id)
+        .get('https://asktoclearbackend.herokuapp.com/file/'+id)
         .then(res=>{
             setPdf(res.data[0])
         })
@@ -43,7 +43,7 @@ export default function PdfViewer(props) {
   }
   const downloadFile=()=>{
     axios
-    .get('http://localhost:3003/downloadfile/'+pdf._id,{responseType:'blob'})
+    .get('https://asktoclearbackend.herokuapp.com/downloadfile/'+pdf._id,{responseType:'blob'})
     .then(res=>{
         setMessage('');
       return download(res.data,pdf.name,pdf.mimetype)
@@ -120,7 +120,7 @@ const pdfdisplay=()=>{
                     
                     <td colSpan='3' align='left'>
                     <Document
-                    file={`http://localhost:3003/${pdf.file_path}`}
+                    file={`https://asktoclearbackend.herokuapp.com/${pdf.file_path}`}
                     onLoadSuccess={onDocumentLoadSuccess} >
                     <Page pageNumber={pageNumber} />
                     </Document>

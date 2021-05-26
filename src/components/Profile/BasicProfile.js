@@ -7,7 +7,7 @@ export default function BasicProfile(props) {
     return (
         <div className="basic-profile">
             <div className="profile-pic">
-                <img src={user.file_path}  alt={user.name} />
+                <img src={`https://asktoclearbackend.herokuapp.com/${user.file_path}`}  alt={user.name} />
             </div>
             <div className="basic-info">
                 <table>

@@ -82,7 +82,7 @@ export default function Signup(props) {
            
 
                 await axios
-                .post('/signup',formData)
+                .post('https://asktoclearbackend.herokuapp.com/signup',formData)
                 .then((res) => {
                     if(res.data.error){
                         toast.error(res.data.error);

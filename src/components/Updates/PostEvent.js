@@ -29,7 +29,7 @@ export default function PostEvent(props) {
         formData.append('date',date);
 
         axios
-        .post('http://localhost:3003/createevent',formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .post('https://asktoclearbackend.herokuapp.com/createevent',formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                toast.error(res.data.error);
@@ -51,48 +51,50 @@ export default function PostEvent(props) {
         e.preventDefault();
         history.goBack();
     }
-
+    
     return (
         <>
-           <div className="postevent">
-                <h1>Post Event/Update</h1>
-                <form>
-                <div className="input">
-                    <label>select event/update type:</label><br />
-                    <select onChange={(e)=>setType(e.target.value)}>
-                        <option>select category</option>
-                        <option value='competition'>Competition</option>
-                        <option value='fest'>Fest</option>
-                        <option value='techFest'>Tech Fest</option>
-                        <option value='webinar'>Webinar</option>
-                        <option value='sports'>Sports</option>
-                    </select>
-                </div>
-                <div className="input">
-                    <label>Event Name</label><br />
-                    <input className="input-style" type="text" onChange={(e)=>setName(e.target.value)} />
-                </div>
-                <div className="input">
-                    <label>Organizer</label><br />
-                    <input className="input-style" type="text" onChange={(e)=>setOrganizer(e.target.value)} />
-                </div>
-                <div className="input">
-                    <label>More Info</label><br />
-                    <input className="input-style" type="text" onChange={(e)=>setInfo(e.target.value)} />
-                </div>
-                <div className="input">
-                    <label>Contacts </label><br />
-                    <input className="input-style" type="text" onChange={(e)=>setContacts(e.target.value)} />
-                </div>
-                <div className="input">
-                    <label>Poster/Image</label><br/>
-                    <input className="input-file" type="file" onChange={(e)=>setFile(e.target.files[0])} />
-                </div>
-                <div>
-                    
-                    <button type="submit" onClick={handleSubmit}>Post</button>
-                    <button onClick={navigateBack}>Go Back</button>
-                    <ToastContainer
+        <div className="updateinfo">
+        <h1>Upload Event/Update</h1>
+        <form>
+        
+        <div className="userinfo">
+            <label>change event/update type:</label><br />
+            <select onChange={(e)=>setType(e.target.value)} style={{height:'30px'}}>
+                <option>select category</option>
+                <option value='competition'>Competition</option>
+                <option value='fest'>Fest</option>
+                <option value='techFest'>Tech Fest</option>
+                <option value='webinar'>Webinar</option>
+                <option value='sports'>Sports</option>
+            </select>
+        </div>
+        <div className="userinfo">
+        <label>Event Name</label><br />
+        <input type="text" onChange={(e)=>setName(e.target.value)} />
+        </div>
+        
+        <div className="userinfo">
+            <label>Organizer</label><br />
+            <input type="text" onChange={(e)=>setOrganizer(e.target.value)} />
+        </div>
+        <div className="userinfo">
+            <label>More Info</label><br />
+            <input type="text" onChange={(e)=>setInfo(e.target.value)} />
+        </div>
+        <div className="userinfo">
+            <label>Contacts </label><br />
+            <input type="text" onChange={(e)=>setContacts(e.target.value)} />
+        </div>
+        <div className="userinfo">
+            <label>Change Poster</label><br/>
+            <input type="file" onChange={(e)=>setFile(e.target.files[0])} style={{border:'none'}} />
+        </div>
+        <div className='submit-buttons' style={{textAlign:'center'}}>
+            
+            <button type="submit" onClick={handleSubmit}>Update</button>
+            <button onClick={navigateBack}>Go Back</button>
+            <ToastContainer
                                 position="top-right"
                                 autoClose={2000}
                                 hideProgressBar={false}
@@ -102,9 +104,9 @@ export default function PostEvent(props) {
                                 draggable
                                 pauseOnHover
                                 />
-                </div>
-                </form>
-           </div>
+        </div>
+        </form>
+   </div>
         </>
     )
 }

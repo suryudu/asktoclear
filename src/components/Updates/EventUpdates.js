@@ -4,7 +4,7 @@ import "./EventUpdates.css";
 import Header from "../HeaderFile/Header";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import pic from '../../bg.jpeg';
+// import pic from '../../bg.jpeg';
 
 import UpdateSearch from "./UpdateSearch";
 // import ViewUpdate from "./ViewUpdate";
@@ -29,7 +29,7 @@ export default function EventUpdates(props) {
 
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/allevents',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/allevents',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             setEvents(res.data);
         })
@@ -38,7 +38,7 @@ export default function EventUpdates(props) {
     const displayUpdates=()=>{
        
         if(!events.length){
-            return <h1>no events</h1>
+            return <h1>loading....</h1>
         }else{
             return events.map((event,key)=>{
                 return <UpdateCard event ={event} key={key} />

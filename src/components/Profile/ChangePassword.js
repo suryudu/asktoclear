@@ -29,7 +29,7 @@ export default function ChangePassword(props) {
                 password
             }
             axios
-            .patch('http://localhost:3003/updatepassword',data,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+            .patch('https://asktoclearbackend.herokuapp.com/updatepassword',data,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
             .then(res=>{
                 if(res.data.error){
                     toast.error(res.data.error)

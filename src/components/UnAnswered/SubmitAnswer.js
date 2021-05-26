@@ -14,7 +14,7 @@ export default function SubmitAnswer(props) {
     const {questionId}=useParams();
    
     useEffect(()=>{
-        axios.get('http://localhost:3003/question/'+questionId,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        axios.get('https://asktoclearbackend.herokuapp.com/question/'+questionId,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             setQuestion(res.data);
          
@@ -26,7 +26,7 @@ export default function SubmitAnswer(props) {
     const questionDisplay=()=>{
         if(!question.length){
             
-            return <h1 style={{fontSize:'20px'}}>question not found</h1>
+            return <h1 style={{fontSize:'20px'}}>loading.....</h1>
         }else{
            
             return (
@@ -35,7 +35,7 @@ export default function SubmitAnswer(props) {
                 <tbody>
                     <tr>
                         <td>
-                           <img src={`http://localhost:3003/${question[0].questionedBy.file_path}`} height='40px' width='40px' />
+                           <img src={`https://asktoclearbackend.herokuapp.com/${question[0].questionedBy.file_path}`} height='40px' width='40px' />
                         </td>
                         <td>
                             {question[0].questionedBy.name} {question[0].date}
@@ -67,7 +67,7 @@ export default function SubmitAnswer(props) {
         }
 
         axios
-        .post('http://localhost:3003/createanswer/'+questionId,data,{headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .post('https://asktoclearbackend.herokuapp.com/createanswer/'+questionId,data,{headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                toast.error(res.data.error);

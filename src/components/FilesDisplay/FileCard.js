@@ -33,7 +33,7 @@ export default function FileCard(props) {
 
     const downloadFile=()=>{
         axios
-        .get('http://localhost:3003/downloadfile/'+file._id,{responseType:'blob'})
+        .get('https://asktoclearbackend.herokuapp.com/downloadfile/'+file._id,{responseType:'blob'})
         .then(res=>{
           return download(res.data,file.name,file.mimetype)
       }).catch(err=>{

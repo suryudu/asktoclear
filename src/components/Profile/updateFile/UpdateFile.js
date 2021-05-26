@@ -13,7 +13,7 @@ export default function UpdateFile(props) {
     
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/file/'+fileId)
+        .get('https://asktoclearbackend.herokuapp.com/file/'+fileId)
         .then(res=>{
             
             setName(res.data[0].name);
@@ -40,7 +40,7 @@ export default function UpdateFile(props) {
         formData.append('date',d);
 
         axios
-        .patch('http://localhost:3003/updatefile/'+fileId,formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .patch('https://asktoclearbackend.herokuapp.com/updatefile/'+fileId,formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                 toast.error(res.data.error)
@@ -57,7 +57,7 @@ export default function UpdateFile(props) {
     return (
         <>
         <div className="updateinfo">
-                <h1>Edit Your Profile</h1>
+                <h1>Edit Your File</h1>
                 <form>
                 <div className="userinfo">
                     <label>Name :</label><br />

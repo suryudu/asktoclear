@@ -7,6 +7,7 @@ import {useHistory} from 'react-router-dom';
 export default function Home(props) {    
     const history=useHistory();
    
+    
     return (
         <>
         <div className="home" style={{'backgroundColor':'#2699fb'}}>
@@ -32,6 +33,7 @@ export default function Home(props) {
             <div style={{width:"50%"}}>
                 <img src={bg} alt='background pic' />
             </div>
+            
         </div>
             
         </div>

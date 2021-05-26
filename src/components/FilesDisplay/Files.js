@@ -26,7 +26,7 @@ export default function Files(props) {
 
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/allfiles',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/allfiles',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.message){
                 setMessage(res.data.message);

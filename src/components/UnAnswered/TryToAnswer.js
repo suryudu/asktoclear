@@ -23,7 +23,7 @@ export default function TryToAnswer(props) {
 
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/allquestions',{headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/allquestions',{headers:{'Content-Type':'application/json','Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                 setMessage(res.data.error)

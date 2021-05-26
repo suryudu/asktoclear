@@ -36,7 +36,7 @@ export default function EventProfile(props) {
 
     const deleteEvent=()=>{
         axios
-        .delete(`http://localhost:3003/deleteevent/${event._id}`,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .delete(`https://asktoclearbackend.herokuapp.com/deleteevent/${event._id}`,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                 toast.error(res.data.error)
@@ -55,7 +55,7 @@ export default function EventProfile(props) {
     
     const downloadFile = async () => {
         await axios
-                .get('http://localhost:3003/download/'+event._id,{responseType:'blob'})
+                .get('https://asktoclearbackend.herokuapp.com/download/'+event._id,{responseType:'blob'})
                 .then(res=>{
 
                       setErrorMsg('');

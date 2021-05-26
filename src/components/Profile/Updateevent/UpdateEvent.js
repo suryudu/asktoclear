@@ -16,7 +16,7 @@ export default function UpdateEvent(props) {
     
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/event/'+eventId,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/event/'+eventId,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             setType(res.data[0].type);
             setName(res.data[0].name);
@@ -46,7 +46,7 @@ export default function UpdateEvent(props) {
         // }
 
         axios
-        .patch('http://localhost:3003/updateevent/'+eventId,formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .patch('https://asktoclearbackend.herokuapp.com/updateevent/'+eventId,formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                 toast.error(res.data.error)

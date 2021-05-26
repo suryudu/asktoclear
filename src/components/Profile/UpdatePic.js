@@ -14,7 +14,7 @@ export default function UpdatePic(props) {
         formData.append('file',file);
 
         axios
-        .patch('http://localhost:3003/updateprofilepic',formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .patch('https://asktoclearbackend.herokuapp.com/updateprofilepic',formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                 toast.error(res.data.error)

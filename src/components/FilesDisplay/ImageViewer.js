@@ -13,7 +13,7 @@ export default function ImageViewer(props) {
     const [message,setMessage]=useState();
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/file/'+id)
+        .get('https://asktoclearbackend.herokuapp.com/file/'+id)
         .then(res=>{
             
             setImage(res.data[0])
@@ -26,12 +26,12 @@ export default function ImageViewer(props) {
             return <h1>no image</h1>
         }else{
             
-            return <img src={'http://localhost:3003/'+image.file_path} alt={image.name} ></img>
+            return <img src={'https://asktoclearbackend.herokuapp.com/'+image.file_path} alt={image.name} ></img>
         }
     }
     const downloadFile=()=>{
         axios
-        .get('http://localhost:3003/downloadfile/'+image._id,{responseType:'blob'})
+        .get('https://asktoclearbackend.herokuapp.com/downloadfile/'+image._id,{responseType:'blob'})
         .then(res=>{
             setMessage('');
           return download(res.data,image.name,image.mimetype)

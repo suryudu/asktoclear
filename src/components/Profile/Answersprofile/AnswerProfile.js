@@ -33,7 +33,7 @@ export default function AnswerProfile(props) {
 
     const deleteAnswer=()=>{
         axios
-        .delete(`http://localhost:3003/deleteanswer/${answer._id}`,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .delete(`https://asktoclearbackend.herokuapp.com/deleteanswer/${answer._id}`,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                 toast.error(res.data.error)

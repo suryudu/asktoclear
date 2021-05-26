@@ -41,7 +41,7 @@ export default function FileProfile(props) {
 
     const downloadFile=()=>{
         axios
-        .get('http://localhost:3003/downloadfile/'+file._id,{responseType:'blob'})
+        .get('https://asktoclearbackend.herokuapp.com/downloadfile/'+file._id,{responseType:'blob'})
         .then(res=>{
             setMessage('');
           return download(res.data,file.name,file.mimetype)
@@ -71,7 +71,7 @@ export default function FileProfile(props) {
 
     const deleteFile=()=>{
       axios
-      .delete(`http://localhost:3003/deletefile/${file._id}`,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+      .delete(`https://asktoclearbackend.herokuapp.com/deletefile/${file._id}`,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
       .then(res=>{
           if(res.data.error){
               toast.error(res.data.error)

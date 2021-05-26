@@ -19,16 +19,16 @@ export default function Answer(props) {
   
     useEffect(()=>{
         axios
-        .get('/answers/'+questionId)
+        .get('https://asktoclearbackend.herokuapp.com/answers/'+questionId)
         .then(res=>{
-            console.log(res.data)
+           
             setQuestion(res.data.question);
             if(res.data.error){
                 setMessage(res.data.error);
             }else{
                 setAnswers(res.data.answer);
             }
-            console.log(answers)
+           
             
           
         }).catch(err=>{
@@ -51,7 +51,7 @@ export default function Answer(props) {
                 <tbody>
                     <tr>
                         <td rowSpan='2'>
-                           <img src={`/${question.questionedBy.file_path}`} height='40px' width='40px' />
+                           <img src={`https://asktoclearbackend.herokuapp.com/${question.questionedBy.file_path}`} height='40px' width='40px' />
                         </td>
                         <td>
                             {question.questionedBy.name} {question.date}
@@ -102,6 +102,7 @@ export default function Answer(props) {
         </div>
         
         <Link to={`/submitanswer/${questionId}`}><button style={{float:'right',height:'30px',marginTop:'10px',cursor:'pointer',borderRadius:'10px',padding:'5px',backgroundColor:'#bbdefb',color:'black',fontSize:'20px'}}>Create Answer</button></Link>
+        
         </div>
         
         </div>

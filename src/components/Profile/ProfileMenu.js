@@ -32,25 +32,25 @@ export default function ProfileMenu(props) {
    
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/myquestions',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/myquestions',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
 
             setQuestions(res.data);
             
         })
         axios
-        .get('http://localhost:3003/myanswers',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/myanswers',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             setAnswers(res.data);
             
         })
         axios
-        .get('http://localhost:3003/myevents',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/myevents',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             setEvents(res.data)
         })
         axios
-        .get('http://localhost:3003/allfiles',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/allfiles',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{    
             setFiles(res.data);
         })

@@ -24,7 +24,7 @@ export default function Questions(props) {
 
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/allquestions')
+        .get('https://asktoclearbackend.herokuapp.com/allquestions')
         .then(res=>{
             if(res.data.error){
                 setMessage(res.data.error)

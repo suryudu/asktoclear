@@ -22,7 +22,7 @@ export default function ShareFile(props) {
         formData.append('date',date);
 
         axios
-        .post('http://localhost:3003/createfile',formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .post('https://asktoclearbackend.herokuapp.com/createfile',formData,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                 toast.error(res.data.error);
@@ -36,46 +36,45 @@ export default function ShareFile(props) {
         })
     }
 
-    const goBack=()=>{
+    const goBack=(e)=>{
+        e.preventDefault();
         history.goBack();
     }
 
-
     return (
         <>
-           <div className="sharefile">
-                <h1>Share Your File</h1>
-                <form>
-                
-                <div className="input">
-                    
-                    <input className="input-file" type="file" required onChange={(e)=>setFile(e.target.files[0])} />         
-                </div>
-                <div className="input">
-                    <label>name</label><br />
-                    <input className="input-style" type="text" required onChange={(e)=>setName(e.target.value)} />
-                </div>
-                <div className="input">
-                    <label>Description</label><br />
-                    <input className="input-style" type="text" onChange={(e)=>setDesrciption(e.target.value)} />
-                </div>
-                <div>
-                    
-                    <button type="submit" onClick={handleSubmit}>Post</button>
-                    <button onClick={goBack}>Go Back</button>
-                    <ToastContainer
-                    position="top-right"
-                    autoClose={2000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    />
-                </div>
-                </form>
-           </div>
+        <div className="updateinfo">
+        <h1>upload Your File</h1>
+        <form>
+        <div className="userinfo">
+            <label>Name :</label><br />
+            <input type="text" onChange={(e)=>setName(e.target.value)}  />
+        </div>
+        <div className="userinfo">
+            <label>Description :</label><br />
+            <input type="text" onChange={(e)=>setDesrciption(e.target.value)} />
+        </div>
+        <div style={{marginLeft:'200px',padding:'10px'}}>
+            <label>Change File:</label><br />
+            <input type='file' onChange={(e)=>setFile(e.target.files[0])} />
+        </div>
+        <div style={{textAlign:"center"}}>
+        <button onClick={goBack}>Go Back</button>
+        <button onClick={handleSubmit}>Update</button>
+        <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        />
+    </div>
+
+    </form>
+    </div>
         </>
     )
 }

@@ -30,7 +30,7 @@ export default function UpdateCard(props) {
 
     const downloadFile = async () => {
         await axios
-                .get('http://localhost:3003/download/'+event._id,{responseType:'blob'})
+                .get('https://asktoclearbackend.herokuapp.com/download/'+event._id,{responseType:'blob'})
                 .then(res=>{
                     return download(res.data,event.name,event.mimetype)
                 }).catch(err=>{
@@ -59,7 +59,7 @@ export default function UpdateCard(props) {
         
         <CardMedia
           className={classes.media}
-          image={event.file_path}
+          image={`https://asktoclearbackend.herokuapp.com/${event.file_path}`}
           title={event.name}
         />
         <CardContent>

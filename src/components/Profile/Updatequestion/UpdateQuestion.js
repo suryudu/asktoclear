@@ -13,7 +13,7 @@ export default function UpdateQuestion(props) {
 
     useEffect(()=>{
         axios
-        .get('http://localhost:3003/question/'+questionId,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .get('https://asktoclearbackend.herokuapp.com/question/'+questionId,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             
             setQuestion(res.data[0].question);
@@ -35,7 +35,7 @@ export default function UpdateQuestion(props) {
         }
         
         axios
-        .patch('http://localhost:3003/updatequestion/'+questionId,data,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
+        .patch('https://asktoclearbackend.herokuapp.com/updatequestion/'+questionId,data,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             if(res.data.error){
                 toast.error(res.data.error)
