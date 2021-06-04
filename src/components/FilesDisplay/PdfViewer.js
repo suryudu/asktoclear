@@ -17,6 +17,8 @@ export default function PdfViewer(props) {
         .get('https://asktoclearbackend.herokuapp.com/file/'+id)
         .then(res=>{
             setPdf(res.data[0])
+        }).catch(err=>{
+          console.log(err);
         })
     },[id])
 
@@ -132,6 +134,7 @@ const pdfdisplay=()=>{
                 </tbody>
               </table>
             </div>
+            <ToastContainer />
           </>
     )
     }

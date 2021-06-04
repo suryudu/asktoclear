@@ -12,8 +12,8 @@ export default function Header(props) {
     const [signed,setSigned]=useState();
     const [popupMenu,setPopupMenu]=useState(false);
     const ref=useRef();
-    const {state,dispatch} =useContext(UserContext);
-
+    const {state} =useContext(UserContext);
+ 
     
     useEffect(()=>{
         if(state){

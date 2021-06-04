@@ -40,7 +40,15 @@ export default function Answer(props) {
 
     const displayQuestion=()=>{
         if(!question){
-            return <h4>loading....</h4>
+            return (
+                <>
+                <tr>
+                    <td> <h4>loading....</h4></td>
+                </tr>
+                </>
+            )
+            
+           
         }else{
             
            
@@ -51,7 +59,7 @@ export default function Answer(props) {
                 <tbody>
                     <tr>
                         <td rowSpan='2'>
-                           <img src={`https://asktoclearbackend.herokuapp.com/${question.questionedBy.file_path}`} height='40px' width='40px' />
+                           <img src={`https://asktoclearbackend.herokuapp.com/${question.questionedBy.file_path}`} alt={question.questionedBy.name} height='40px' width='40px' />
                         </td>
                         <td>
                             {question.questionedBy.name} {question.date}
@@ -73,7 +81,13 @@ export default function Answer(props) {
     const displayAnswers=()=>{
         
         if(!answers.length){
-            return <td style={{fontSize:'25px',textAlign:'center'}}>{message}</td>
+            if(message){
+                return  <tr><td style={{fontSize:'25px',textAlign:'center'}}>{message}</td></tr>
+            }else{
+                return <tr><td style={{fontSize:'25px',textAlign:'center'}}>Loading...</td></tr>
+            }
+           
+            
         }else{
             return answers.map((answer,key)=>{
                 const number=key;
@@ -94,7 +108,7 @@ export default function Answer(props) {
         <div className="">
             {displayQuestion()}
         <div className="answer-card answer-table">
-            <table className="">
+            <table>
                 <tbody>
                    {displayAnswers()}
                 </tbody>

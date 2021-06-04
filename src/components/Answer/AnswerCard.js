@@ -3,14 +3,14 @@ import React from 'react';
 export default function AnswerCard(props) {
     
     const answer=props.answer;
-    const key=props.number;
-    console.log(answer.answerBy.file_path)
+   
+    
     return (
             <>
             <tr>
             <td style={{width:'30px'}}></td>
             <td>
-               <img src={`https://asktoclearbackend.herokuapp.com/${answer.answerBy.file_path}`} height='40px' width='40px' />
+               <img src={`https://asktoclearbackend.herokuapp.com/${answer.answerBy.file_path}`} alt={answer.answerBy.name} height='40px' width='40px' />
             </td>
             <td>
                 {answer.answerBy.name} {answer.date}

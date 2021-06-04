@@ -8,22 +8,7 @@ import TableCell from '@material-ui/core/TableCell';
 export default function QuestionCard(props) {
  
     const q=props.question;
-    const helo=()=>{
-        <div>
-            <div className="question">
-                <div className="question-details">
-                    <Link to={`/answer/${q._id}`}><h4 style={{display:"flex"}}><div style={{color:"red"}}>Q</div><div style={{marginLeft:"10px",textAlign:"justify",cursor:"pointer"}}>. {q.question}</div></h4></Link>
-                </div>
-                <div className="questionedby">
-                    <p style={{cursor:"pointer"}}>{q.questionedBy.name}</p>
-                    <p>{q.date}</p>
-                </div> 
-            </div>
-
-           
-            
-        </div>
-    }
+   
     return (
         <>
         

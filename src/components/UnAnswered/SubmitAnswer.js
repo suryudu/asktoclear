@@ -12,11 +12,18 @@ export default function SubmitAnswer(props) {
     const [question,setQuestion]=useState([]);
     const history =useHistory();
     const {questionId}=useParams();
-   
+    const [message,setMessage]=useState();
+
     useEffect(()=>{
         axios.get('https://asktoclearbackend.herokuapp.com/question/'+questionId,{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
-            setQuestion(res.data);
+            if(res.data.error){
+                setMessage(res.data.error)
+               
+            }else{
+                setQuestion(res.data);
+               
+            }
          
         }).catch(err=>{
             console.log('error from getting question');
@@ -26,7 +33,7 @@ export default function SubmitAnswer(props) {
     const questionDisplay=()=>{
         if(!question.length){
             
-            return <h1 style={{fontSize:'20px'}}>loading.....</h1>
+            return <h1 style={{fontSize:'20px'}}>{message ? message : "loading.."}</h1>
         }else{
            
             return (
@@ -35,7 +42,7 @@ export default function SubmitAnswer(props) {
                 <tbody>
                     <tr>
                         <td>
-                           <img src={`https://asktoclearbackend.herokuapp.com/${question[0].questionedBy.file_path}`} height='40px' width='40px' />
+                           <img src={`https://asktoclearbackend.herokuapp.com/${question[0].questionedBy.file_path}`} alt={question[0].questionedBy.name} height='40px' width='40px' />
                         </td>
                         <td>
                             {question[0].questionedBy.name} {question[0].date}
@@ -100,8 +107,8 @@ export default function SubmitAnswer(props) {
                     <tbody>
                         <tr>
                             <td>
-                              <textarea style={{height:'200px',width:'900px',fontSize:'20px'}} onChange={(e)=>setAnswer(e.target.value)}>
-
+                              <textarea value={answer} style={{height:'200px',width:'900px',fontSize:'20px'}} onChange={(e)=>setAnswer(e.target.value)}>
+                                    
                               </textarea>
                             </td>
                         </tr>

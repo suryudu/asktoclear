@@ -2,13 +2,14 @@ import React,{useEffect,useState} from 'react';
 // import "./Questions.css";
 import QuestionCard from "./QuestionCard";
 import Header from "../HeaderFile/Header";
-import QuestionSearch from "./QuestionSearch";
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableContainer from '@material-ui/core/TableContainer';
 import Paper from '@material-ui/core/Paper';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
 
 
 const useStyles = makeStyles({
@@ -23,22 +24,40 @@ export default function Questions(props) {
     const [message,setMessage]=useState();
 
     useEffect(()=>{
+        const ac = new AbortController();
         axios
         .get('https://asktoclearbackend.herokuapp.com/allquestions')
         .then(res=>{
             if(res.data.error){
                 setMessage(res.data.error)
+               
             }else{
                 setQuestions(res.data);
+               
             }
            
+        }).catch(err=>{
+            console.log(err);
+            
         })
+        return () => ac.abort();
     },[])
 
     const allquestions=()=>{
         if(!questions.length){
-            return <h4>{message}</h4>
+            
+            return (
+                <>
+                    <TableRow>
+                        <TableCell>
+                        {message ? message : "loading.."}
+                           
+                        </TableCell>
+                    </TableRow>
+                </>
+            )
         }else{
+           
             return questions.map((question,key)=>{
                 return <QuestionCard question={question} key={key} />
             })

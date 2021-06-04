@@ -17,6 +17,8 @@ export default function ImageViewer(props) {
         .then(res=>{
             
             setImage(res.data[0])
+        }).catch(err=>{
+            console.log(err);
         })
     },[id])
     

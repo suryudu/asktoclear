@@ -36,6 +36,8 @@ export default function AskQuestion(props) {
          }, 2000);
           
         }
+      }).catch(err=>{
+        console.log(err);
       })
     }
    

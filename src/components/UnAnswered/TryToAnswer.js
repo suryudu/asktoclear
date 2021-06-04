@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import UnAnswered from "./UnAnswered";
 import Header from "../HeaderFile/Header";
 // import Footer from "../FooterFiles/Footer";
-import QuestionSearch from "../QuestionsDisplay/QuestionSearch";
+
 import "../QuestionsDisplay/Questions.css";
 import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,6 +10,8 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableContainer from '@material-ui/core/TableContainer';
 import Paper from '@material-ui/core/Paper';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
 
 const useStyles = makeStyles({
     table: {
@@ -38,7 +40,15 @@ export default function TryToAnswer(props) {
 
     const allQuestions=()=>{
         if(!questions.length){
-            return <h1>{message}</h1>
+            return (
+                <>
+                    <TableRow>
+                        <TableCell>
+                            <h4>{message}</h4>
+                        </TableCell>
+                    </TableRow>
+                </>
+            )
         }else{
             return questions.map((question,key)=>{
                 // console.log(question.date);

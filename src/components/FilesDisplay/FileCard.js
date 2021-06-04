@@ -41,26 +41,7 @@ export default function FileCard(props) {
       })
     }
    
-    const d=()=>{
-      <tr>
-          <td>
-            {fileDisplay()}
-          </td>
-          <td>
-            <a href="#/" onClick={()=>downloadFile()}>download</a>
-          </td>
-          <td>
-            <p>{file.name}</p>
-          </td>
-          <td>
-            <p>{file.description}</p>
-          </td>
-          <td>
-            <p>{file.uploadedBy.name}</p>
-            <p>{file.date}</p>
-            </td>
-        </tr>
-    }
+    
     return (
         <>
         <TableRow>

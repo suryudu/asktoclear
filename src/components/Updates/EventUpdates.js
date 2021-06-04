@@ -2,28 +2,18 @@ import React,{useState,useEffect} from 'react';
 import UpdateCard from "./UpdateCard";
 import "./EventUpdates.css";
 import Header from "../HeaderFile/Header";
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 // import pic from '../../bg.jpeg';
 
-import UpdateSearch from "./UpdateSearch";
+
 // import ViewUpdate from "./ViewUpdate";
 import axios from 'axios';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-    },
-  }));
+
 
 export default function EventUpdates(props) {
     // const [fullView,setFullView]=useState(false);
-    const classes = useStyles();
+    
 
     const [events,setEvents]=useState([]);
 
@@ -32,6 +22,9 @@ export default function EventUpdates(props) {
         .get('https://asktoclearbackend.herokuapp.com/allevents',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
             setEvents(res.data);
+            console.log(res.data);
+        }).catch(err=>{
+            console.log(err)
         })
     },[])
 

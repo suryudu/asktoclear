@@ -3,7 +3,9 @@ import "./BasicProfile.css";
 
 export default function BasicProfile(props) {
     
+    
     const user=props.data;
+  
     return (
         <div className="basic-profile">
             <div className="profile-pic">

@@ -24,7 +24,8 @@ export default function Files(props) {
     const [files,setFiles]=useState([]);
     const [message,setMessage]=useState('');
 
-    useEffect(()=>{
+    useEffect( ()=>{
+      const ac = new AbortController();
         axios
         .get('https://asktoclearbackend.herokuapp.com/allfiles',{headers:{'Authorization':'Bearer '+localStorage.getItem('jwt')}})
         .then(res=>{
@@ -34,14 +35,25 @@ export default function Files(props) {
             }else{
                 setFiles(res.data);
             }
+        }).catch(err=>{
+          console.log(err);
         })
+        return () => ac.abort();
     },[])
     
 
     const fileDisplay=()=>{
         
         if(!files.length){
-            return <h2>{message}</h2>
+          return (
+            <>
+                <TableRow>
+                    <TableCell>
+                    {message ? message : "loading.."}
+                    </TableCell>
+                </TableRow>
+            </>
+        )
         }else{
             return files.map((file,key)=>{
                 return <FileCard file={file} key={key} />

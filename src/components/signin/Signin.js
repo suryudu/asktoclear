@@ -13,7 +13,7 @@ export default function Signin(props) {
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
     // const [errorMessage,setErrorMessage]=useState('');
-   const {state,dispatch} = useContext(UserContext); 
+   const {dispatch} = useContext(UserContext); 
    
     const handleLogin= (e)=>{
         e.preventDefault();

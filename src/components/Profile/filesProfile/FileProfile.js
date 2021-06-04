@@ -99,6 +99,7 @@ export default function FileProfile(props) {
         <TableCell align="center" style={{cursor:'pointer'}}><Link style={{color:'red'}} to={`/updatefile/${file._id}`}>Edit</Link></TableCell>
         <TableCell align="center" onClick={handleDelete} style={{cursor:'pointer',color:'red'}}>Delete</TableCell>
       </TableRow>
+      <ToastContainer />
 
         </>
     )
